@@ -21,6 +21,7 @@
         <module>event</module>
         <module>annotation</module>
         <module>web</module>
+        <module>conditional-starter</module>
     </modules>
 
     <properties>
