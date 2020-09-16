@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="dependency-lookup-context.xml"/>
+
+    <!--suppress SpringXmlAutowiringInspection -->
+    <bean id="userRepository" class="thinking.in.spring.ioc.container.overview.repository.UserRepository"
+    autowire="byType"><!--自动注入 按照定义顺序注入 -->
+        <!-- 手动硬编码配置-->
+<!--        <property name="users">-->
+<!--            <util:list>-->
+        <!-- 按照顺序注入 -->
+<!--                <ref bean="user"/>-->
+<!--                <ref bean="superUser"/>-->
+<!--            </util:list>-->
+<!--        </property>-->
+<!--        <property name="user" ref="user"/>-->
+    </bean>
+
+
+</beans>

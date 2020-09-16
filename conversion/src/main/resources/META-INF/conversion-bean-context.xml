@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <util:properties id="context">
+        <prop key="name">ruby</prop>
+        <prop key="id">1</prop>
+    </util:properties>
+
+    <!-- 注册ConversionServiceFactoryBean 并且name必须是conversionService -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <bean class="thinking.in.spring.conversion.PropertiesToStringConverter"/>
+        </property>
+    </bean>
+
+
+    <bean id="user" class="thinking.in.spring.ioc.container.overview.domain.User">
+        <property name="id" value="1"/>
+        <property name="name" value="ruby"/>
+        <property name="context">
+            <value>
+                id=2
+                name=weiss
+            </value>
+        </property>
+        <property name="contextAsText" ref="context"/>
+    </bean>
+
+    <bean class="thinking.in.spring.conversion.CustomizedPropertyEditorRegistrar"/>
+
+
+</beans>
