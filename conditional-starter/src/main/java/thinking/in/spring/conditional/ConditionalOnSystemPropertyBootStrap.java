@@ -2,6 +2,9 @@ package thinking.in.spring.conditional;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+/**
+ * 自定义@Conditional条件注解的实现
+ */
 public class ConditionalOnSystemPropertyBootStrap {
     static {
         System.setProperty("language","Chinese");

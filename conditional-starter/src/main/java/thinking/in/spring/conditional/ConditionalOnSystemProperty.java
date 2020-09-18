@@ -4,6 +4,9 @@ import org.springframework.context.annotation.Conditional;
 
 import java.lang.annotation.*;
 
+/**
+ * 系统属性值匹配
+ */
 @Target({ElementType.TYPE,ElementType.METHOD})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

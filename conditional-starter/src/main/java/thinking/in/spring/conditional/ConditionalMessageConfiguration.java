@@ -3,6 +3,9 @@ package thinking.in.spring.conditional;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 根据系统属性language的值来注册相应的message bean
+ */
 @Configuration
 public class ConditionalMessageConfiguration {
 
